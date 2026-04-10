@@ -2,6 +2,8 @@
 
 > Combining Machine Learning and AI to help healthcare professionals assess fetal health risk — and understand *why*.
 
+🔗 **Live App:** [Click here to try it](https://your-app-link.streamlit.app) ← *update after deploying*
+
 ---
 
 ## 📌 Project Overview
@@ -9,8 +11,9 @@
 Cardiotocograms (CTGs) are a cost-accessible tool used to monitor fetal health during pregnancy. This project builds an end-to-end AI system that:
 
 1. Classifies fetal health as **Normal**, **Suspect**, or **Pathological** using a trained ML model
-2. Uses an **LLM Agent** to explain the prediction in plain English
+2. Uses an **LLM** to explain the prediction in plain English
 3. Allows doctors or patients to **ask follow-up questions** about the diagnosis
+4. Supports **CSV file upload** for automatic value reading or manual input
 
 This project contributes to the United Nations' Sustainable Development Goal of reducing child and maternal mortality.
 
@@ -45,12 +48,12 @@ This project contributes to the United Nations' Sustainable Development Goal of 
 
 ---
 
-## 🤖 AI Agent
+## 🤖 AI (LLM) Layer
 
 - Takes the ML prediction + confidence scores as input
-- Uses **Google Gemini API** to generate a plain English explanation
-- Supports follow-up questions about the diagnosis
-- Built with **LangChain** for agent orchestration
+- Uses **Groq API (LLaMA 3.3)** to generate a plain English explanation
+- Maintains **chat history** for contextual follow-up questions
+- System prompt tailored specifically for CTG and fetal health context
 
 ---
 
@@ -59,8 +62,8 @@ This project contributes to the United Nations' Sustainable Development Goal of 
 | Layer | Tools |
 |---|---|
 | Data & ML | pandas, numpy, scikit-learn, joblib |
-| Explainability | SHAP, feature importance |
-| LLM / Agent | Google Gemini API, LangChain |
+| Explainability | Feature importance |
+| LLM | Groq API (LLaMA 3.3-70b) |
 | UI | Streamlit |
 
 ---
@@ -69,7 +72,7 @@ This project contributes to the United Nations' Sustainable Development Goal of 
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/yourusername/fetal-health-assistant.git
+git clone https://github.com/preetha-pallavi/fetal-health-assistant.git
 cd fetal-health-assistant
 ```
 
@@ -81,7 +84,7 @@ pip install -r requirements.txt
 ### 3. Set up API key
 Create a `.env` file:
 ```
-GEMINI_API_KEY=your_api_key_here
+GROQ_API_KEY=your_api_key_here
 ```
 
 ### 4. Run the app
@@ -95,8 +98,8 @@ streamlit run app.py
 
 | Branch | Description |
 |---|---|
-| `main` | ML model, EDA, and core classification |
-| `llm-integration` | LLM Agent + Streamlit UI |
+| `main` | ML model, EDA, core classification + full app |
+| `llm-integration` | LLM development branch |
 
 ---
 
@@ -105,10 +108,11 @@ streamlit run app.py
 ```
 fetal_health_project/
 │
-├── fetal_health_model.pkl        # Trained Random Forest model
-├── fetal_scaler.pkl              # Fitted StandardScaler
+├── fetal_health_model.pkl             # Trained Random Forest model
+├── fetal_scaler.pkl                   # Fitted StandardScaler
 ├── Fetal_Health_Classification.ipynb  # EDA + Model training notebook
-├── app.py                        # Streamlit UI + LLM Agent
+├── Fetal_health_LLM.py                # Groq LLM logic + follow-up Q&A
+├── app.py                             # Streamlit UI
 ├── requirements.txt
 └── README.md
 ```
@@ -120,8 +124,10 @@ fetal_health_project/
 - ✅ 95% overall classification accuracy
 - ✅ Handles class imbalance
 - ✅ Feature importance visualization
+- ✅ CSV file upload for automatic value reading
 - ✅ LLM-powered plain English explanations
-- ✅ Interactive follow-up Q&A with AI agent
+- ✅ Interactive follow-up Q&A with chat history
+- ✅ Medical disclaimer included
 
 ---
 
@@ -135,6 +141,6 @@ This tool aims to make fetal health assessment more accessible and interpretable
 
 ## 👤 Author
 
-**Your Name**
+**Preetha Pallavi**
 - GitHub: [@preetha-pallavi](https://github.com/preetha-pallavi)
 - LinkedIn: [PreethaPallavi](https://www.linkedin.com/in/preetha-pallavi/)
