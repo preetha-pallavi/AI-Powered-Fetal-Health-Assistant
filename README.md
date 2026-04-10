@@ -15,7 +15,6 @@ Cardiotocograms (CTGs) are a cost-accessible tool used to monitor fetal health d
 3. Allows doctors or patients to **ask follow-up questions** about the diagnosis
 4. Supports **CSV file upload** for automatic value reading or manual input
 
-This project contributes to the United Nations' Sustainable Development Goal of reducing child and maternal mortality.
 
 ---
 
