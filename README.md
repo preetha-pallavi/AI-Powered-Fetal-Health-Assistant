@@ -2,7 +2,7 @@
 
 > Combining Machine Learning and AI to help healthcare professionals assess fetal health risk — and understand *why*.
 
-🔗 **Live App:** [Click here to try it](https://your-app-link.streamlit.app) ← *update after deploying*
+🔗 **Live App:** [Click here to try it](https://ai-powered-fetal-health-assistant-rtvuhiph3sm9vw8l7stbdw.streamlit.app/)
 
 ---
 
