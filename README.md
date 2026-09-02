@@ -42,9 +42,9 @@ A **Random Forest Classifier** was trained on the dataset with SMOTE (Synthetic 
 
 | Class | Precision | Recall | F1-Score |
 |---|---|---|---|
-| Normal | 0.95 | 0.98 | 0.97 |
-| Suspect | 0.91 | 0.78 | 0.84 |
-| Pathological | 1.00 | 0.93 | 0.96 |
+| Normal | 0.97 | 0.96 | 0.97 |
+| Suspect | 0.83 | 0.86 | 0.85 |
+| Pathological | 0.96 | 0.93 | 0.95 |
 | **Overall Accuracy** | | | **0.95** |
 
 One known limitation: borderline cases (e.g. low baseline heart rate without decelerations) can still be classified as Normal, reflecting genuine ambiguity in the original expert labels. This is surfaced honestly through the confidence scores shown in the app.
